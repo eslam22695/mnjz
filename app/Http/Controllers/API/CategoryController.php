@@ -14,8 +14,22 @@ class CategoryController extends BaseController
     }
 
     /**
-     * Display a listing of the resource.
+     * @OA\Get(
+     *    path="/category",
+     *    operationId="Category index",
+     *    tags={"category"},
+     *    summary="Get list of categories",
+     *    description="Get list of categories",
+     *     @OA\Response(
+     *          response=200, description="Success",
+     *          @OA\JsonContent(
+     *             @OA\Property(property="status", type="string", example="success"),
+     *             @OA\Property(property="data",type="object")
+     *          )
+     *       )
+     *  )
      */
+
     public function index()
     {
         $categories = $this->service->get();

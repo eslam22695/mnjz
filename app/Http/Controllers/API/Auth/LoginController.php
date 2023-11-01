@@ -15,6 +15,31 @@ class LoginController extends BaseController
         parent::__construct($service);
     }
 
+    /**
+     * @OA\Post(
+     *    path="/login",
+     *    operationId="login",
+     *    tags={"login"},
+     *    summary="Get auth user",
+     *    description="Get auth user",
+     *    @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *            required={"email", "password"},
+     *            @OA\Property(property="email", type="email", format="string", example="test@test.test"),
+     *            @OA\Property(property="password", type="string", format="string", example="12345678"),
+     *         ),
+     *      ),
+     *     @OA\Response(
+     *          response=200, description="Success",
+     *          @OA\JsonContent(
+     *             @OA\Property(property="status", type="string", example="success"),
+     *             @OA\Property(property="data",type="object")
+     *          )
+     *       )
+     *  )
+     */
+
     public function login(LoginRequest $request)
     {
         try {

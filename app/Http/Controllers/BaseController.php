@@ -5,6 +5,22 @@ namespace App\Http\Controllers;
 
 use App\Services\IService;
 
+
+/**
+ * @OA\Info(
+ *     version="1.0.0",
+ *     title="Mnjz Api Documentation",
+ *     description="Mnjz Api Documentation",
+ *     @OA\Contact(
+ *         name="Eslam Osama",
+ *         email="eslamosama22695@gmail.com"
+ *     )
+ * ),
+ * @OA\Server(
+ *     url="/api/",
+ * ),
+ */
+
 class BaseController extends Controller
 {
 
